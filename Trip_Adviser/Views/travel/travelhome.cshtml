@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "travelhome";
+    Layout = null;
+}
+
+<h2>travelhome</h2>
+
+@using (Html.BeginForm("routepage","travel"))
+{
+    @Html.DropDownList("startlocation", (SelectListItem[])ViewBag.locations);
+    @Html.DropDownList("modeoftravel", (SelectListItem[])ViewBag.modeoftravel);
+    <input type="submit" />
+}

@@ -6,9 +6,16 @@
 
 <h2>travelhome</h2>
 
-@using (Html.BeginForm("routepage","travel"))
+@using (Html.BeginForm("routepage", "travel"))
 {
-    @Html.DropDownList("startlocation", (SelectListItem[])ViewBag.locations);
+    <span>From Location:</span>
+    @Html.DropDownList("fromlocation", (SelectListItem[])ViewBag.locations,"from location");
+    <br />
+    <span>To Location:</span>
+    @Html.DropDownList("tolocation", (SelectListItem[])ViewBag.locations,"destination location");
+    <br />
+    <span>Mode Of Travel</span>
     @Html.DropDownList("modeoftravel", (SelectListItem[])ViewBag.modeoftravel);
+    <br />
     <input type="submit" />
 }

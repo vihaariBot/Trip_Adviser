@@ -1,13 +1,35 @@
 ﻿@model List<DataAccessLayer.routedata>
 @{
     ViewBag.Title = "routepage";
+    Layout = null;
 }
 
 <h2>routepage</h2>
 
-@foreach(var i in Model)
-{
-    <span>@i.routeid</span>
-    <span>@i.fromlocation</span>
-    <span>@i.tolocation</span>
-}
+<table border="1">
+    <tr>
+        <td>
+            RouteId
+        </td>
+        <td>
+            From Location
+        </td>
+        <td>
+            To Location
+        </td>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>
+                @i.routeid
+            </td>
+            <td>
+                @i.fromlocation
+            </td>
+            <td>
+                @i.tolocation
+            </td>
+        </tr>
+    }
+    </table>

@@ -29,12 +29,14 @@ namespace DataAccessLayer
         {
             TAmodel data = new TAmodel();
             var hops = from i in data.hops where i.hoplocation==fromlocation || i.hoplocation==tolocation select i;
-            var dbroutes = from i in data.routes.Include("location") select i;
+            //var dbroutes = from i in data.routes.Include("location") select i;
+            var dbroutes = data.routes.Include("fromloc").Include("toloc").Where(i=>i.modeoftravel==modeoftravel).Select(i => i); 
             List<routedata> routes = new List<routedata>();
-           // for(int i=0;i<hops.Count();i++)
-           foreach(var i in hops)
+            
+            bool flag = true;
+            foreach (var i in hops)
             {
-                //for(int j=0;j<hops.Count();j++)
+                
                 foreach(var j in hops)
                 {
                     if(i.hopid!=j.hopid)
@@ -42,12 +44,24 @@ namespace DataAccessLayer
                         if(i.routeid== j.routeid)
                         {
                             routedata route = new routedata();
-                          
+                           
                             var sroute = (from p in dbroutes where p.routeid == i.routeid select p).FirstOrDefault();
                             route.routeid = sroute.routeid;
                             route.fromlocation = sroute.fromloc.locationname;
                             route.tolocation = sroute.toloc.locationname;
-                            routes.Add(route);
+                            foreach(var z in routes)
+                            {
+                                if(z.routeid==route.routeid)
+                                {
+                                    flag = false;
+                                }
+                            }
+                            if (flag)
+                            {
+                                routes.Add(route);
+                                flag = true;
+                            }
+                            flag = true;
 
                         }
                     }

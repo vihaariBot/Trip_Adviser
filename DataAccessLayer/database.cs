@@ -46,43 +46,34 @@ namespace DataAccessLayer
                             routedata route = new routedata();
                            
                             var sroute = (from p in dbroutes where p.routeid == i.routeid select p).FirstOrDefault();
-                            route.routeid = sroute.routeid;
-                            route.fromlocation = sroute.fromloc.locationname;
-                            route.tolocation = sroute.toloc.locationname;
-                            foreach(var z in routes)
+                            if (sroute != null)
                             {
-                                if(z.routeid==route.routeid)
+                                route.routeid = sroute.routeid;
+                                route.fromlocation = sroute.fromloc.locationname;
+                                route.tolocation = sroute.toloc.locationname;
+                                foreach (var z in routes)
                                 {
-                                    flag = false;
+                                    if (z.routeid == route.routeid)
+                                    {
+                                        flag = false;
+                                    }
                                 }
-                            }
-                            if (flag)
-                            {
-                                routes.Add(route);
+                                if (flag)
+                                {
+                                    routes.Add(route);
+                                    flag = true;
+                                }
                                 flag = true;
                             }
-                            flag = true;
-
                         }
                     }
                 }
             }
             return routes;
         }
-       
     }
    
-    public class locationdata
-    {
-        public int locationid;
-        public string locationname;
-        public string description;
-    }
+    
 
-    public class routedata
-    {
-        public int routeid;
-        public string fromlocation;
-        public string tolocation;
-    }
+   
 }

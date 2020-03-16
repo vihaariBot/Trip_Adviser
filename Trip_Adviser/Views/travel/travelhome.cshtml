@@ -5,17 +5,22 @@
 }
 
 <h2>travelhome</h2>
-
-@using (Html.BeginForm("routepage", "travel"))
-{
-    <span>From Location:</span>
-    @Html.DropDownList("fromlocation", (SelectListItem[])ViewBag.locations,"from location");
-    <br />
-    <span>To Location:</span>
-    @Html.DropDownList("tolocation", (SelectListItem[])ViewBag.locations,"destination location");
-    <br />
-    <span>Mode Of Travel</span>
-    @Html.DropDownList("modeoftravel", (SelectListItem[])ViewBag.modeoftravel);
-    <br />
-    <input type="submit" />
-}
+<table border="0">
+    @using (Html.BeginForm("routepage", "travel"))
+    {
+    <tr>
+        <td> <span>From Location:</span></td>
+        <td> @Html.DropDownList("fromlocation", (SelectListItem[])ViewBag.locations, "from location")</td>
+    </tr>
+    <tr>
+        <td>  <span>To Location:</span></td>
+        <td>  @Html.DropDownList("tolocation", (SelectListItem[])ViewBag.locations, "destination location")</td>
+    </tr>
+    <tr>
+        <td> <span>Mode Of Travel</span></td>
+        <td>  @Html.DropDownList("modeoftravel", (SelectListItem[])ViewBag.modeoftravel)</td>
+        
+    </tr>
+    <tr> <td colspan="2"> <input type="submit" /></td></tr>
+    }
+</table>

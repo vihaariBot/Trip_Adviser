@@ -1,0 +1,47 @@
+﻿@model List<DataAccessLayer.placedata>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>viewallplaces</title>
+</head>
+<body>
+    <div> 
+        <table border="1">
+            <tr>
+                <td>
+                    <b>PlaceId</b>
+                </td>
+                <td>
+                    <b>
+                        PlaceName
+                    </b>
+                </td>
+            </tr>
+                
+                    @{ 
+                        foreach(var i in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span>@i.ptvid</span>
+                                </td>
+                                <td>
+                                    <a href="~/placestovisit/place?pid=@i.ptvid"><span>@i.placename</span></a>
+                                </td>
+                               
+                            </tr>
+                        }
+                    }
+                
+            
+        </table>
+        <a href="~/placestovisit/sortrating">SortByRating</a>
+    </div>
+</body>
+</html>

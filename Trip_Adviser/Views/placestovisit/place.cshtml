@@ -1,0 +1,39 @@
+﻿@model DataAccessLayer.placedata
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>place</title>
+</head>
+<body>
+    <div> 
+        <table border="1">
+            @{ 
+               
+            <tr>
+                <td>
+                    <span>@Model.ptvid</span>
+                </td>
+                <td>
+                    <span>@Model.placename</span>
+                </td>
+                <td>
+                    <span>@Model.address</span>
+                </td>
+                <td>
+                    <span>@Model.rating</span>
+                </td>
+            </tr>
+             <tr>
+                 <td colspan="4"><a href="~/common/addcomment">Click Here To Add Rating</a></td>
+             </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

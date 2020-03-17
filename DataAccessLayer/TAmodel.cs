@@ -26,6 +26,8 @@ namespace DataAccessLayer
         public virtual DbSet<location> locations { get; set; }
         public virtual DbSet<route> routes { get; set; }
         public virtual DbSet<hop> hops { get; set; }
+        public virtual DbSet<placestovisit> Placestovisits { get; set; }
+        public virtual DbSet<rating> ratings { get; set; }
     }
 
     //public class MyEntity
@@ -40,6 +42,14 @@ namespace DataAccessLayer
         public string locationname { get; set; }
         public string description { get; set; }
 
+    }
+    public class rating
+    {
+        public int ratingid { get; set; }
+        public int itemid { get; set; }
+        public string itemtype { get; set; }
+        public int ratedby { get; set; }
+        public int Rating { get; set; }
     }
     public class route
     {
@@ -60,5 +70,15 @@ namespace DataAccessLayer
         public int hopid { get; set; }
         public int routeid { get; set; }
         public int hoplocation { get; set; }
+    }
+    public class placestovisit
+    {
+        [Key]
+        public int ptvid { get; set; }
+        public string placename { get; set; }
+        public location locid { get; set; }
+        [ForeignKey("locid")]
+        public int locationid { get; set; }
+        public string address { get; set; }
     }
 }

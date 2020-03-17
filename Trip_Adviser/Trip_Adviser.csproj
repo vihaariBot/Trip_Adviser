@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\placestovisitController.cs" />
     <Compile Include="Controllers\travelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\travel\travelhome.cshtml" />
     <Content Include="Views\travel\routepage.cshtml" />
+    <Content Include="Views\placestovisit\viewallplaces.cshtml" />
+    <Content Include="Views\placestovisit\place.cshtml" />
+    <Content Include="Views\placestovisit\sortrating.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

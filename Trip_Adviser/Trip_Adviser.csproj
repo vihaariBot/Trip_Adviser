@@ -128,8 +128,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\commonController.cs" />
+    <Compile Include="Controllers\lodgeController.cs" />
+    <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\placestovisitController.cs" />
+    <Compile Include="Controllers\restaurantController.cs" />
     <Compile Include="Controllers\travelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,16 +141,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\10.jpg" />
+    <Content Include="Content\3DrRh6.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image12.jpg" />
+    <Content Include="Content\images7.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\background.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Views\Shared\layout.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -159,6 +168,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="styling.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -172,14 +182,25 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\travel\travelhome.cshtml" />
     <Content Include="Views\travel\routepage.cshtml" />
     <Content Include="Views\placestovisit\viewallplaces.cshtml" />
     <Content Include="Views\placestovisit\place.cshtml" />
     <Content Include="Views\placestovisit\sortrating.cshtml" />
+    <Content Include="Views\placestovisit\mustwatch.cshtml" />
+    <Content Include="Views\login\LoginProcess.cshtml" />
+    <Content Include="Views\login\RegisterProcess.cshtml" />
+    <Content Include="Views\login\Welcome.cshtml" />
+    <Content Include="Views\login\mainpage.cshtml" />
+    <Content Include="Views\lodge\Lodge.cshtml" />
+    <Content Include="Views\lodge\selectlodge.cshtml" />
+    <Content Include="Views\lodge\lodgessortprice.cshtml" />
+    <Content Include="Views\lodge\lodgessortrating.cshtml" />
+    <Content Include="Views\common\addcomment.cshtml" />
+    <Content Include="Views\restaurant\Restaurant.cshtml" />
+    <Content Include="Views\restaurant\SelectRestaurant.cshtml" />
+    <Content Include="Views\restaurant\Sortbyprice.cshtml" />
+    <Content Include="Views\restaurant\Sortbyrating.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

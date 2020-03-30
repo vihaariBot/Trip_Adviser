@@ -25,7 +25,7 @@ namespace Trip_Adviser.Controllers
             ViewBag.locations = locs;
             SelectListItem[] modeoftravel = new SelectListItem[3];
             modeoftravel[0] = new SelectListItem() { Text = "bus", Value = "bus" };
-            modeoftravel[1] = new SelectListItem() { Text = "travel", Value = "travel" };
+            modeoftravel[1] = new SelectListItem() { Text = "train", Value = "train" };
             modeoftravel[2] = new SelectListItem() { Text = "air", Value = "air" };
             ViewBag.modeoftravel = modeoftravel;
             return View();

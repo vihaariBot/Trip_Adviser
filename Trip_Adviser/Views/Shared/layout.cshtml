@@ -1,0 +1,39 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <link href="~/styling.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div>
+        <table>
+            <tr >
+                <td >
+                    TRIP ADVISOR
+                </td>
+                
+            </tr>
+            @*<tr>
+                <td>
+                    <a href="~/login/mainpage">Location Home</a>
+                </td>
+            </tr>*@
+            <tr>
+                <td colspan="2">
+                    @RenderBody()
+                </td>
+            </tr>
+            <tr >
+                <td  >
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

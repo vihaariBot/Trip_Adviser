@@ -1,0 +1,61 @@
+﻿@model List<DataAccessLayer.lodgedata>
+@{
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>lodgessortrating</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr>
+                <th>
+                    LOCATION_ID
+                </th>
+                <th>
+                    LODGE_ID
+                </th>
+                <th>
+                    LOGDE_NAME
+                </th>
+
+            </tr>
+            @foreach (var i in Model)
+
+            {
+
+                <tr>
+                    <td>
+                        @i.LOCATION_ID
+                    </td>
+                    <td>
+                        @i.LODGE_ID
+                    </td>
+
+
+                    <td>
+                        <a href="~/Lodge/selectlodge?lodgeid=@i.LODGE_ID">@i.LODGE_NAME</a>
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+        <a href="~/lodge/Lodge">Lodges Home</a>
+        @*@foreach (var i in Model)
+        {
+            <span>@i.LOCATION_ID</span>
+            <span>@i.LODGE_ID</span>
+            <a href="~/Lodge/selectlodge?lodgeid=@i.LODGE_ID">@i.LODGE_NAME</a>
+
+
+        }*@
+
+    </div>
+</body>
+</html>

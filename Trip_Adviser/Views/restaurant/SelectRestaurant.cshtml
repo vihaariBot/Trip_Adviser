@@ -1,0 +1,56 @@
+﻿@model DataAccessLayer.Restaurantdata
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectRestaurant</title>
+  
+</head>
+<body>
+    <div>
+        <table border="1" align="center">
+            <tr>
+                <th>
+                    Restaurant Id
+                </th>
+                <th>
+                    Restaurant Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Starting Price
+                </th>
+                <th>
+                    Rating
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @Model.RESTAURANT_ID
+                </td>
+                <td>
+                    @Model.RESTAURANT_NAME
+                </td>
+                <td>
+                    @Model.ADRESS
+                </td>
+                <td>
+                    @Model.PRICE
+                </td>
+                <td>
+                    @Model.rating
+                </td>
+            </tr>
+        </table>
+        <form style="text-align:center">
+            <a href="~/common/addcomment?itemtype=Restaurant&itemid=@Model.RESTAURANT_ID">Click Here to Add Rating</a>
+        </form>
+    </div>
+    <a href="~/restaurant/Restaurant">All Restaurant</a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model List<DataAccessLayer.Restaurantdata>
+@{
+    ViewBag.Title = "Restaurant";
+    
+}
+
+<form style="text-align:center">
+    <h2>Restaurant</h2>
+</form>
+
+
+
+<table border="1">
+    <tr>
+        <th>
+            Location Id
+        </th>
+        <th>
+            Restaurant Id
+        </th>
+        <th>
+            Restaurant Name
+        </th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>
+                @i.LOCATION_ID
+            </td>
+            <td>
+                @i.RESTAURANT_ID
+            </td>
+            <td>
+                <a href="~/Restaurant/SelectRestaurant?restaurantid=@i.RESTAURANT_ID">@i.RESTAURANT_NAME</a>
+            </td>
+        </tr>
+    }
+</table>
+<form style="text-align:center">
+    <a href="~/Restaurant/Sortbyprice">Sort By Price</a>
+    <br />
+    <a href="~/Restaurant/Sortbyrating">Sort By Rating</a>
+</form>
+

@@ -20,7 +20,15 @@ namespace DataAccessLayer
                 place.locationid = i.locationid;
                 place.placename = i.placename;
                 place.ptvid = i.ptvid;
-                place.rating = (from k in model.ratings where k.itemtype == "placestovisit" && k.itemid == i.ptvid select k.Rating).Average();
+                var rating = (from k in model.ratings where k.itemtype == "placestovisit" && k.itemid == i.ptvid select k.Rating);
+                if(rating.Any())
+                {
+                    place.rating = rating.Average();
+                }
+                else
+                {
+                    place.rating = 0;
+                }
                 places.Add(place);
             }
             return places;
@@ -29,6 +37,19 @@ namespace DataAccessLayer
         {
             List<placedata> places = locationplaces(lid);
             places.Sort(new ratingcomparer());
+            return places;
+        }
+        public List<placedata> mustwatch(int lid)
+        {
+            List<placedata> allplaces = locationplaces(lid);
+            List<placedata> places= new List<placedata>();
+            foreach(var i in allplaces)
+            {
+                if(i.rating>=3)
+                {
+                    places.Add(i);
+                }
+            }
             return places;
         }
 

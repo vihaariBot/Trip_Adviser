@@ -1,0 +1,52 @@
+﻿@model List<DataAccessLayer.Restaurantdata>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sortbyprice</title>
+    
+</head>
+<body>
+
+    <table border="1" align="center">
+        <tr>
+            <th>
+                Location Id
+            </th>
+            <th>
+                Restaurant Id
+            </th>
+            <th>
+                Restaurant Name
+            </th>
+        </tr>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @i.LOCATION_ID
+                </td>
+                <td>
+                    @i.RESTAURANT_ID
+                </td>
+                <td>
+                    <a href="~/Restaurant/SelectRestaurant?restaurantid=@i.RESTAURANT_ID">@i.RESTAURANT_NAME</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <a href="~/restaurant/Restaurant">Restaurant Menu</a>
+    @*<div>
+            @foreach(var i in Model)
+            {
+                <span>@i.LOCATION_ID</span>
+                <span>@i.RESTAURANT_ID</span>
+                <a href="~/Restaurant/SelectRestaurant?restaurantid=@i.RESTAURANT_ID">@i.RESTAURANT_NAME</a>
+            }
+        </div>*@
+</body>
+</html>

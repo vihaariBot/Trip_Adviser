@@ -50,9 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addcommentmodel.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="common.cs" />
     <Compile Include="database.cs" />
     <Compile Include="locationdata.cs" />
+    <Compile Include="Locationmenu.cs" />
+    <Compile Include="lodgedb.cs" />
+    <Compile Include="logindb.cs" />
+    <Compile Include="loginmodel.cs" />
     <Compile Include="Migrations\202003110726096_first.cs" />
     <Compile Include="Migrations\202003110726096_first.Designer.cs">
       <DependentUpon>202003110726096_first.cs</DependentUpon>
@@ -65,9 +71,23 @@
     <Compile Include="Migrations\202003170507470_hu.Designer.cs">
       <DependentUpon>202003170507470_hu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003281432125_integration1.cs" />
+    <Compile Include="Migrations\202003281432125_integration1.Designer.cs">
+      <DependentUpon>202003281432125_integration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003281712594_integration2.cs" />
+    <Compile Include="Migrations\202003281712594_integration2.Designer.cs">
+      <DependentUpon>202003281712594_integration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003290953080_integration3.cs" />
+    <Compile Include="Migrations\202003290953080_integration3.Designer.cs">
+      <DependentUpon>202003290953080_integration3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="placestovisitdb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationModel.cs" />
+    <Compile Include="restaurantdb.cs" />
     <Compile Include="routedata.cs" />
     <Compile Include="TAmodel.cs" />
   </ItemGroup>
@@ -84,6 +104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003170507470_hu.resx">
       <DependentUpon>202003170507470_hu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003281432125_integration1.resx">
+      <DependentUpon>202003281432125_integration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003281712594_integration2.resx">
+      <DependentUpon>202003281712594_integration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003290953080_integration3.resx">
+      <DependentUpon>202003290953080_integration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

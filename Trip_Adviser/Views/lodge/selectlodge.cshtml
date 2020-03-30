@@ -1,0 +1,66 @@
+﻿@model DataAccessLayer.lodgedata
+@{
+  
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>selectlodge</title>
+    <style>
+        body {
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+
+        <table border="1">
+            <tr>
+                <th>
+                    LOCATION_ID
+                </th>
+                <th>
+                    LOGDE_NAME
+                </th>
+                <th>
+                    LOGDE_ADD
+                </th>
+                <th>
+                    PRICE
+                </th>
+                <th>
+                    RATING
+                </th>
+
+            </tr>
+
+            <tr>
+                <td>
+                    @Model.LODGE_ID
+                </td>
+                <td>
+                    @Model.LODGE_NAME
+                </td>
+                <td>
+                    @Model.LODGE_ADD
+                </td>
+                <td>
+                    @Model.PRICE
+                </td>
+                <td>
+                    @Model.rating
+                </td>
+
+            </tr>
+        </table>
+        <a href="~/common/addcomment?itemtype=lodge&itemid=@Model.LODGE_ID">Click Here To Add New Rating</a>
+    </div>
+    <a href="~/lodge/Lodge">To View All Lodges</a>
+</body>
+</html>
+

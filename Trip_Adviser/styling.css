@@ -1,0 +1,31 @@
+﻿body {
+    /*background-color: antiquewhite;*/
+    background-image: url('../../Content/10.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table {
+    align-content: center;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 100%;
+    
+    /*background-color: #ffe6e6;*/
+}
+th {
+    /*background-color: #ff9999;*/
+    text-align: center;
+   
+}
+tr {
+    text-align: center;
+   
+}
+p {
+  word-spacing: 30px;
+}
+a{
+    text-decoration:none;
+}

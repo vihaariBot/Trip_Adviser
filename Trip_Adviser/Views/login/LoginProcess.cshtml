@@ -1,0 +1,91 @@
+﻿@model DataAccessLayer.loginmodel
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login To Trip_Adviser</title>
+    <style type="text/css">
+        body {
+           background-color: cornflowerblue;
+        }
+
+        #divid {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            border-radius: 0px;
+        }
+
+        tr, td {
+            padding: 5px;
+        }
+
+
+
+
+        body {
+            background-image: url('../../Content/3DrRh6.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;*/
+        }
+
+        h1 {
+            color: yellowgreen;
+            padding: 4%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1 align="right-top">Login To Trip_Adviser</h1>
+    <div id="divid">
+
+        @using (Html.BeginForm("LoginProcess", "Login", FormMethod.Post))
+        {
+
+            <table align="center">
+                <tr>
+                    <td>
+                        UserName:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.username)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                    </td>
+                    <td>
+                        @Html.PasswordFor(m => m.password)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div align="center">
+                            <input type="submit" value="Login" />
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            @Html.ValidationSummary()
+
+
+        }
+        <h2>@ViewBag.msg</h2>
+        <a href="~/Login/RegisterProcess">Add New User</a>
+    </div>
+
+</body>
+</html>
+

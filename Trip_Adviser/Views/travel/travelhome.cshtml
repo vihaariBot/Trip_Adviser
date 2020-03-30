@@ -1,26 +1,27 @@
 ﻿
 @{
     ViewBag.Title = "travelhome";
-    Layout = null;
+    
 }
 
 <h2>travelhome</h2>
-<table border="0">
+
+<table border="1">
     @using (Html.BeginForm("routepage", "travel"))
     {
-    <tr>
-        <td> <span>From Location:</span></td>
-        <td> @Html.DropDownList("fromlocation", (SelectListItem[])ViewBag.locations, "from location")</td>
-    </tr>
-    <tr>
-        <td>  <span>To Location:</span></td>
-        <td>  @Html.DropDownList("tolocation", (SelectListItem[])ViewBag.locations, "destination location")</td>
-    </tr>
-    <tr>
-        <td> <span>Mode Of Travel</span></td>
-        <td>  @Html.DropDownList("modeoftravel", (SelectListItem[])ViewBag.modeoftravel)</td>
-        
-    </tr>
-    <tr> <td colspan="2"> <input type="submit" /></td></tr>
+        <tr>
+            <th> <span>From Location:</span></th>
+            <td> @Html.DropDownList("fromlocation", (SelectListItem[])ViewBag.locations, "from location")</td>
+        </tr>
+        <tr>
+            <th>  <span>To Location:</span></th>
+            <td>  @Html.DropDownList("tolocation", (SelectListItem[])ViewBag.locations, "destination location")</td>
+        </tr>
+        <tr>
+            <th> <span>Mode Of Travel</span></th>
+            <td>  @Html.DropDownList("modeoftravel", (SelectListItem[])ViewBag.modeoftravel)</td>
+
+        </tr>
+        <tr> <td colspan="2"> <input type="submit" /></td></tr>
     }
 </table>

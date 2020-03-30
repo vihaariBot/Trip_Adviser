@@ -1,27 +1,28 @@
 ﻿@model List<DataAccessLayer.placedata>
-@{
-    Layout = null;
-}
+
 
 <!DOCTYPE html>
 
 <html>
+
 <head>
+  
     <meta name="viewport" content="width=device-width" />
     <title>viewallplaces</title>
 </head>
+
 <body>
     <div>
         <table border="1">
             <tr>
-                <td>
+                <th>
                     <b>PlaceId</b>
-                </td>
-                <td>
+                </th>
+                <th>
                     <b>
                         PlaceName
                     </b>
-                </td>
+                </th>
             </tr>
 
             @{
@@ -41,7 +42,7 @@
 
 
         </table>
-       
+        <a href="~/placestovisit/viewallplaces">All Places Home</a>
     </div>
 </body>
 </html>

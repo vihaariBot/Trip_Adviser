@@ -1,0 +1,50 @@
+﻿@model DataAccessLayer.addcommentmodel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>addcomment</title>
+</head>
+<body>
+    <div>
+
+        @using (Html.BeginForm("addcomment", "common", FormMethod.Post))
+        {
+
+            <table border="1">
+
+                <tr>
+                    
+
+
+                        <th>ItemType:</th> <td> @Html.TextBoxFor(g => g.itemtype, new { @readonly = "readonly" })</td>
+
+                    </tr>
+                <tr>
+                    <th>ItemId:</th>
+                    <td>
+
+                        @Html.TextBoxFor(g => g.itemid, new { @readonly = "readonly" })
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Rating:</th>
+                    <td>
+                        @Html.TextBoxFor(g => g.rating)
+
+
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" />
+        }
+
+    </div>
+</body>
+</html>
+

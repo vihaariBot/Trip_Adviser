@@ -12,22 +12,32 @@ namespace Trip_Adviser.Controllers
         public ActionResult viewallplaces()
         {
             placestovisitdb database = new placestovisitdb();
-            List<placedata> places = database.locationplaces(1);
+            int locationid = int.Parse(Session["locationid"].ToString());
+            List<placedata> places = database.locationplaces(locationid);
 
             return View(places);
         }
         public ActionResult place(int pid)
         {
             placestovisitdb database = new placestovisitdb();
-            List<placedata> places = database.locationplaces(1);
+            int locationid = int.Parse(Session["locationid"].ToString());
+            List<placedata> places = database.locationplaces(locationid);
             placedata place = places.Where(i => i.ptvid == pid).Select(i => i).FirstOrDefault();
             return View(place);
         }
         public ActionResult sortrating()
         {
             placestovisitdb database = new placestovisitdb();
-            List<placedata> places = database.sortrating(1);
+            int locationid = int.Parse(Session["locationid"].ToString());
+            List<placedata> places = database.sortrating(locationid);
 
+            return View(places);
+        }
+        public ActionResult mustwatch()
+        {
+            placestovisitdb database = new placestovisitdb();
+            int locationid = int.Parse(Session["locationid"].ToString());
+            List<placedata> places = database.mustwatch(locationid);
             return View(places);
         }
     }

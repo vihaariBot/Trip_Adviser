@@ -1,0 +1,49 @@
+﻿@model List<DataAccessLayer.lodgedata>
+@{
+    ViewBag.Title = "Lodge";
+   
+}
+
+<h2>Lodge</h2>
+<table border="1">
+    <tr>
+        <th>
+            LOCATION_ID
+        </th>
+        <th>
+            LODGE_ID
+        </th>
+        <th>
+            LOGDE_NAME
+        </th>
+
+    </tr>
+    @foreach (var i in Model)
+
+    {
+
+        <tr>
+            <td>
+                @i.LOCATION_ID
+            </td>
+            <td>
+                @i.LODGE_ID
+            </td>
+
+
+            <td>
+                <a href="~/Lodge/selectlodge?lodgeid=@i.LODGE_ID">@i.LODGE_NAME</a>
+            </td>
+        </tr>
+    }
+
+
+
+
+
+</table>
+<a href="~/Lodge/lodgessortprice">Sort By Price</a>
+<a href="~/Lodge/lodgessortrating">Sort By Rating</a>
+
+
+

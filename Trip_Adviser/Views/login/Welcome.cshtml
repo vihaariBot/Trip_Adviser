@@ -1,0 +1,44 @@
+﻿
+
+
+<!DOCTYPE html>
+@{ 
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome</title>
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/10.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            color: darkslateblue;
+            padding: 5%;
+        }
+
+        h3 {
+            color: black;
+            /*padding: 4%;*/
+        }
+    </style>
+</head>
+
+
+<body align="center">
+    <div>
+        <h1 align="center"> Welcome</h1>
+        <h3 align="center">Select Trip Location</h3>
+
+        @using (Html.BeginForm("Welcome", "Login", FormMethod.Post))
+        {
+            @Html.DropDownList("locationid", (SelectListItem[])ViewBag.locs, new { style = "width: 170px" })
+            <input type="submit" value="Visit" />
+        }
+    </div>
+</body>
+</html>

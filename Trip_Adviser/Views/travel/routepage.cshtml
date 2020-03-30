@@ -1,35 +1,47 @@
 ﻿@model List<DataAccessLayer.routedata>
 @{
     ViewBag.Title = "routepage";
-    Layout = null;
+   
+}
+  
+<h2>routepage</h2>
+@{
+    if (Model.Any())
+    {
+
+        <table border="1">
+            <tr>
+                <th>
+                    RouteId
+                </th>
+                <th>
+                    From Location
+                </th>
+                <th>
+                    To Location
+                </th>
+            </tr>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @i.routeid
+                    </td>
+                    <td>
+                        @i.fromlocation
+                    </td>
+                    <td>
+                        @i.tolocation
+                    </td>
+                </tr>
+            }
+        </table>
+
+    }
+    else
+    {
+        <span>No Routes Found</span>
+    }
 }
 
-<h2>routepage</h2>
-
-<table border="1">
-    <tr>
-        <td>
-            RouteId
-        </td>
-        <td>
-            From Location
-        </td>
-        <td>
-            To Location
-        </td>
-    </tr>
-    @foreach (var i in Model)
-    {
-        <tr>
-            <td>
-                @i.routeid
-            </td>
-            <td>
-                @i.fromlocation
-            </td>
-            <td>
-                @i.tolocation
-            </td>
-        </tr>
-    }
-    </table>
+<a href="~/travel/travelhome">Click Here to check other travel options</a>

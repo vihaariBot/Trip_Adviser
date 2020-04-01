@@ -26,6 +26,7 @@ namespace Trip_Adviser.Controllers
                 }
                 else
                 {
+                    ViewBag.message="Invalid credentials";
                     return View();
                 }
             }

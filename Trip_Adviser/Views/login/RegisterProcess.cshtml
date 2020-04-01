@@ -50,17 +50,47 @@
     @using (Html.BeginForm("RegisterProcess", "Login", FormMethod.Post))
     {
 <table>
-    <span>UserName</span>
-    @Html.TextBoxFor(m => m.username)
-    <br />
-    <span>Password</span> @Html.PasswordFor(m => m.password)
-    <br />
-    <span>ConfirmPassword</span> @Html.PasswordFor(m => m.cpassword)
-    <br />
-    <span>EmailId</span> @Html.TextBoxFor(m => m.EMAILID)
-    <br />
+    <tr>
+        <th>
+            UserName
+        </th>
+        <td>
+            @Html.TextBoxFor(m => m.username)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span>Password</span>
+        </th>
+        <td>
+            @Html.PasswordFor(m => m.password)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            <span>ConfirmPassword</span>
+        </th>
+        <td>
+            @Html.PasswordFor(m => m.cpassword)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span>EmailId</span>
+        </th>
+        <td>
+            @Html.TextBoxFor(m => m.EMAILID)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Add User" />
+        </td>
+    </tr>
+
+    
     @Html.ValidationSummary()
-    <input type="submit" value="Add User" />
 </table>
     }
 </body>
